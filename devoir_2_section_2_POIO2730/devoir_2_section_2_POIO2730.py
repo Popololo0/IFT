@@ -37,7 +37,7 @@ def convertisseur_temperature() :
             print("Recommence!")
 
 #Exercice 5
-def coucher_a_cote_de_quelqun_est_radioactif() :
+def convertisseur_consommation() :
     i = 1
     while i == 1 :
         x = input("Que voulez-vous faire comme conversion? De L/100Km -> MpG : Faire L. De MpG -> L/100Km : Faire M. ")
@@ -46,7 +46,7 @@ def coucher_a_cote_de_quelqun_est_radioactif() :
             try :
                 consommation = float(consommation)
             except :
-                coucher_a_cote_de_quelqun_est_radioactif()
+                convertisseur_consommation()
                 break
             if consommation > 0 :
                 consommation = 235.215 * consommation
@@ -60,7 +60,7 @@ def coucher_a_cote_de_quelqun_est_radioactif() :
             try :
                 consommation = float(consommation)
             except :
-                coucher_a_cote_de_quelqun_est_radioactif()
+                convertisseur_consommation()
                 break
             if consommation > 0:
                 consommation = consommation / 235.215
@@ -73,7 +73,7 @@ def coucher_a_cote_de_quelqun_est_radioactif() :
             print("Recommence!")
 
 #Exercice 6
-def mondou() :
+def calcul_geometrie() :
     i = 1
     while i == 1 :
         forme = input("Quel forme géométrique veux-tu que je calcule aujourd'hui? R pour rectangle, T pour triangle et C pour cercle. ")
@@ -83,12 +83,12 @@ def mondou() :
             try :
                 base = float(base)
             except :
-                mondou()
+                calcul_geometrie()
                 break
             try :
                 hauteur = float(hauteur)
             except :
-                mondou()
+                calcul_geometrie()
                 break
             if base > 0 and hauteur > 0 :
                 resultat = base * hauteur
@@ -101,12 +101,12 @@ def mondou() :
             try:
                 base = float(base)
             except:
-                mondou()
+                calcul_geometrie()
                 break
             try:
                 hauteur = float(hauteur)
             except:
-                mondou()
+                calcul_geometrie()
                 break
             if base > 0 and hauteur > 0:
                 resultat = (base * hauteur) / 2
@@ -117,7 +117,7 @@ def mondou() :
             try :
                 rayon = float(rayon)
             except :
-                mondou()
+                calcul_geometrie()
                 break
             if rayon > 0 :
                 resultat = rayon * rayon * 3.1715926535
@@ -130,7 +130,7 @@ def mondou() :
 convertisseur_temperature()
 
 #Exercice 5
-coucher_a_cote_de_quelqun_est_radioactif()
+convertisseur_consommation()
 
 #Exercice 6
-mondou()
+calcul_geometrie()
