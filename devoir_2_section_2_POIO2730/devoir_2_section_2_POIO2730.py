@@ -1,4 +1,4 @@
-# Voici la section 1 du devoir 2 d'IFT 211 d'Olivier Poiré et d'Alexandre Guay. La date de remise est le 22 janvier 2025.
+# Voici la section 2 du devoir 2 d'IFT 211 d'Olivier Poiré et d'Alexandre Guay. La date de remise est le 22 janvier 2025.
 
 # Exercice 4
 # La fonction convertisseur_temperature a pour but de demander à l'utilisateur de choisir le sens de la conversion, puis de convertir la températue et de retourner la réponse.
@@ -10,13 +10,13 @@ def convertisseur_temperature() :
 
     while i == 1 :
 
-        x = input("Que voulez-vous faire comme conversion? De C -> F : Faire C. De F -> C : Faire F. ")
+        x = input("Que voulez-vous faire comme conversion? Pour °C -> °F, entrez C et pour °F -> °C, entrez F : ")
 
-        if x == "C" :
+        if x == "C" or x == "c" :
 
-            temperature = (input("Quel est la température à convertire? "))
+            temperature = (input("Quel est la température à convertir? "))
 
-            try :
+            try : # Vérification et convertion en float
                 temperature = float(temperature)
 
             except :
@@ -28,7 +28,7 @@ def convertisseur_temperature() :
 
                 temperature = (9 * temperature / 5) + 32
 
-                print("La température est de " + str(temperature) + " F.")
+                print("La température est de " + str(temperature) + " °F.")
 
                 i += 1
 
@@ -37,11 +37,11 @@ def convertisseur_temperature() :
 
                 print("Il faut une valeur supérieure à -270.")
 
-        elif x == "F" :
+        elif x == "F" or x == "f" :
 
-            temperature = (input("Quel est la température à convertire? "))
+            temperature = (input("Quel est la température à convertir? "))
 
-            try :
+            try : # Vérification et convertion en float
                 temperature = float(temperature)
 
             except :
@@ -53,7 +53,7 @@ def convertisseur_temperature() :
 
                 temperature = (temperature - 32) * 5 / 9
 
-                print("La température est de " + str(temperature) + " C.")
+                print("La température est de " + str(temperature) + " °C.")
 
                 i += 1
 
@@ -79,13 +79,13 @@ def convertisseur_consommation() :
 
     while i == 1 :
 
-        x = input("Que voulez-vous faire comme conversion? De L/100Km -> MpG : Faire L. De MpG -> L/100Km : Faire M. ")
+        x = input("Que voulez-vous faire comme conversion? De L/100Km -> MpG, Faire L et pour MpG -> L/100Km, Faire M : ")
 
-        if x == "L" :
+        if x == "L" or x == "l":
 
-            consommation = (input("Quel est la consommation à convertire? "))
+            consommation = (input("Quel est la consommation à convertir? "))
 
-            try :
+            try : # Vérification et convertion en float
                 consommation = float(consommation)
 
             except :
@@ -106,11 +106,11 @@ def convertisseur_consommation() :
 
                 print("La consommation ne peux pas être négative.")
 
-        elif x == "M" :
+        elif x == "M" or x == "m":
 
-            consommation = (input("Quel est la consommation à convertire? "))
+            consommation = (input("Quel est la consommation à convertir? "))
 
-            try :
+            try : # Vérification et convertion en float
                 consommation = float(consommation)
 
             except :
@@ -150,20 +150,20 @@ def calcul_geometrie() :
         forme = input("Quel forme géométrique veux-tu que je calcule aujourd'hui? R pour rectangle, T pour triangle et C pour cercle. ")
 
         # "Sous fonction" qui calcul l'aire d'un rectangle en s'assurant d'avoir que des valeurs positives
-        if forme == "R" :
+        if forme == "R" or forme == "r" :
 
             base = input("Quel est la base du rectangle? ")
 
             hauteur = input("Quel est la hauteur du rectangle? ")
 
-            try :
+            try : # Vérification et convertion en float
                 base = float(base)
 
             except :
                 calcul_geometrie()
                 break
 
-            try :
+            try : # Vérification et convertion en float
                 hauteur = float(hauteur)
 
             except :
@@ -181,20 +181,20 @@ def calcul_geometrie() :
                 i += 1
 
         # "Sous fonction" qui calcul l'aire d'un triangle en s'assurant d'avoir que des valeurs positives
-        elif forme == "T" :
+        elif forme == "T" or forme == "t":
 
             base = input("Quel est la base du triangle? ")
 
             hauteur = input("Quel est la hauteur du triangle? ")
 
-            try:
+            try: # Vérification et convertion en float
                 base = float(base)
 
             except:
                 calcul_geometrie()
                 break
 
-            try:
+            try: # Vérification et convertion en float
                 hauteur = float(hauteur)
 
             except:
@@ -212,11 +212,11 @@ def calcul_geometrie() :
                 i += 1
 
         # "Sous fonction" qui calcul l'aire d'un cercle en s'assurant qu le rayon soit positif
-        elif forme == "C" :
+        elif forme == "C" or forme == "c" :
 
             rayon = input("Quel est la rayon du cercle? ")
 
-            try :
+            try : # Vérification et convertion en float
                 rayon = float(rayon)
 
             except :

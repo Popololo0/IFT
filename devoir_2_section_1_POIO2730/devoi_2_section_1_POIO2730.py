@@ -15,7 +15,7 @@ def factorial(nombre) :
 
             compteur -= 1
 
-            nombre = nombre * compteur
+            nombre *= compteur
 
         print("La réponse de " + str(nombre_initiale) + " factoriel est : " + str(nombre))
 
@@ -40,7 +40,7 @@ def liste_diviseur(n) :
     liste = []
 
     # Vérification des conditions limites de la fonctoin
-    if 0 < n < 2e16 and type(n) == int :
+    if 0 < n < 2**(16) and type(n) == int :
 
         while i <= n :
 
@@ -61,42 +61,45 @@ def liste_diviseur(n) :
 # La fonction palindrome a pour but de prendre un mot de moin de 100 caractères et de déterminer s'il s'agit d'un palindrome ou pas.
 # Le seul problème avec la fonction est que si l'on marque un nombre entre guillmet, il va le traiter comme des caractères...
 def palindrome(mot) :
+    if mot.isalpha():
+        # Vérification des conditions limites de la fonction
+        if len(mot) >= 100 :
 
-    # Vérification des conditions limites de la fonction
-    if mot != str(mot) or len(mot) >= 100 :
-
-        print("Franchement...")
-
-        return 0
-
-    liste_mot = mot.lower()
-
-    liste_mot = list(liste_mot)
-
-    tom = list(reversed(mot))
-
-    i = 0
-
-    while i < len(mot) // 2 :
-
-        # Vérification si le mot est un palindrome
-        if liste_mot[i] != tom[i] :
-
-            print(mot + " n'est pas un palindrome!")
+            print("Franchement...")
 
             return 0
 
-        i += 1
+        liste_mot = mot.lower()
 
-    print(mot + " est un palindrome!")
+        liste_mot = list(liste_mot)
 
-    return 1
+        tom = list(reversed(mot))
+
+        i = 0
+
+        while i < len(mot) // 2 :
+
+            # Vérification si le mot est un palindrome
+            if liste_mot[i] != tom[i] :
+
+                print(mot + " n'est pas un palindrome!")
+
+                return 0
+
+            i += 1
+
+        print(mot + " est un palindrome!")
+        return 1
+
+    else:
+        print ("Ne contient pas uniquement des lettres")
+        return 0
 
 #Exercice 1
-factorial()
+factorial(42)
 
 #Exercice 2
-liste_diviseur()
+liste_diviseur(6553)
 
 #Exercice 3
-palindrome()
+palindrome("te et")
