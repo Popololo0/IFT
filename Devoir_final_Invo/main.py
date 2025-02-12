@@ -18,7 +18,7 @@ def lecture_nettoyage (chemin) :
 def analyse_texte(texte_net) :
 
     liste_lettre = []
-    liste_mot = []
+    liste_mot = set()
 
     nope = texte_net.split()
     len_lettre = len(texte_net)
@@ -29,9 +29,9 @@ def analyse_texte(texte_net) :
         if texte_net[x] not in liste_lettre :
             liste_lettre.append(texte_net[x])
 
-    '''for x in range(0, len_mot) :
+    for x in range(0, len_mot) :
         if nope[x] not in liste_mot :
-            liste_mot.append(nope[x])'''
+            liste_mot.add(nope[x])
 
     return print((len_lettre, len_mot, len(liste_lettre), len(liste_mot)))
 
